@@ -595,6 +595,9 @@ def main():
     except Exception as e:
         logging.error(f"Error loading data: {e}")
         return
+    logging.info(f"Dataset info:\n{df_raw.info()}")
+    logging.info(f"Dataset shape: {df_raw.shape[0]} rows, {df_raw.shape[1]} columns")
+    logging.info(f"Dataset summary statistics:\n{df_raw.describe()}")
 
     # For a very concise run, PDF generation can be made optional or suppressed.
     output_plots_to_pdf = True
